@@ -16,6 +16,7 @@ interface ProductAttributes {
   discountPercentage: number;
   rating: number;
   stock: number;
+  category: string;
 }
 
 interface ProductCreationAttributes extends Optional<ProductAttributes, "id"> {}
@@ -58,4 +59,7 @@ export class Product extends Model<
   @UpdatedAt
   @Column
   updatedAt!: Date;
+
+  @Column
+  category!: string;
 }
